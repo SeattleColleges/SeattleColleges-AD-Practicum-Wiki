@@ -24,45 +24,45 @@ This guide will walk you through installing PostgreSQL, setting up pgAdmin, conn
 1. **Install Homebrew** (skip if already installed):  
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-![Homebrew Installation Prompt](images/image1.png)
+![Homebrew Installation Prompt](Images/image1.png)
 
 - Enter your device password and press **Enter**.  
 
-![Enter password for Homebrew](images/image2.png)
+![Enter password for Homebrew](Images/image2.png)
 
 - You have successfully installed homebrew
 
-![Homebrew installed confirmation](images/image3.png)
+![Homebrew installed confirmation](Images/image3.png)
 
 
 2. **Install PostgreSQL**:  
 brew install postgresql@15
 
-![Install PostgreSQL command](images/image4.png)
+![Install PostgreSQL command](Images/image4.png)
 
 3. **Start PostgreSQL service**:  
 brew services start postgresql@15
 
-![Start PostgreSQL service](images/image5.png)
+![Start PostgreSQL service](Images/image5.png)
 
 
 ## Step 2: Install pgAdmin
 Use Homebrew to install pgAdmin:  
 brew install --cask pgadmin4
 
-![Install pgAdmin command](images/image6.png)
+![Install pgAdmin command](Images/image6.png)
 
 ## Step 3: Configure PostgreSQL
 
 1. Open your terminal and type:  
 psql postgres
 
-![Open PostgreSQL in terminal](images/image7.png)
+![Open PostgreSQL in terminal](Images/image7.png)
 
 2. Set a password for the `postgres` user:  
 \password postgres
 
-![Set password for postgres](images/image8.png)
+![Set password for postgres](Images/image8.png)
 
 - Enter your new password, then re-enter to confirm.  
 - **Remember this password** – you’ll use it later.
@@ -70,13 +70,13 @@ psql postgres
 3. **Open pgAdmin**  
 - Click **Servers**.  
 
-![pgAdmin Servers list](images/image9.png)
+![pgAdmin Servers list](Images/image9.png)
 
 - Enter the `postgres` password you just created.  
 
-![Enter server password in pgAdmin](images/image10.png)
+![Enter server password in pgAdmin](Images/image10.png)
 
-![pgAdmin connected to server](images/image11.png)
+![pgAdmin connected to server](Images/image11.png)
 
 ## Step 4: Set Up the Project `.env`
 
@@ -90,7 +90,7 @@ psql postgres
   - Navigate to belindas-closet-nestjs
   - Open .env and paste your PostgreSQL password
 
-![Open .env file in editor](images/image12.png)
+![Open .env file in editor](Images/image12.png)
 
 3. Update DATABASE_URL with your PostgreSQL password:
 
@@ -105,7 +105,7 @@ DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/belindas_closet
 **Example**: Password Pass@123# becomes:
   DATABASE_URL=postgresql://postgres:Pass%40123%23@localhost:5432/belindas_closet
 
-![Update DATABASE_URL in .env](images/image13.png)
+![Update DATABASE_URL in .env](Images/image13.png)
 
 > ⚠️ **Important:** You **do not** need to manually create the `belindas_closet` database. The NestJS backend will create it automatically when you start the project.
 
@@ -116,15 +116,15 @@ DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/belindas_closet
 1. Check if PostgreSQL is running:  
 brew services list | grep postgresql
 
-![Check PostgreSQL service status](images/image14.png)
+![Check PostgreSQL service status](Images/image14.png)
 
-![Detailed PostgreSQL service list](images/image15.png)
+![Detailed PostgreSQL service list](Images/image15.png)
 
 
 2. Test connection from the command line:  
 psql -h localhost -p 5432 -U postgres -d belindas_closet
 
-![Test DB connection in terminal](images/image16.png)
+![Test DB connection in terminal](Images/image16.png)
 
 - If you see:  
 belindas_closet=#
@@ -139,20 +139,20 @@ belindas_closet=#
 1. **Install Dependencies** (from project root):  
 npm install
 
-![npm install output](images/image17.png)
+![npm install output](Images/image17.png)
 
 
 2. **Start Backend** (creates database tables automatically):  
 cd belindas-closet-nestjs
 npm run start:dev
 
-![Start backend command output](images/image18.png)
+![Start backend command output](Images/image18.png)
 
 
 - Look for:  
         Nest Application successfully started
 
-![Backend successfully started](images/image19.png)
+![Backend successfully started](Images/image19.png)
 
 ⚠️ Note: After starting the backend, refresh belindas_closet in pgAdmin to see the tables created automatically.
 
@@ -160,9 +160,9 @@ npm run start:dev
 cd belindas-closet-nextjs
 npm run dev
 
-![Start frontend command output](images/image20.png)
+![Start frontend command output](Images/image20.png)
 
-![Frontend running in browser](images/image21.png)
+![Frontend running in browser](Images/image21.png)
 
 
 
