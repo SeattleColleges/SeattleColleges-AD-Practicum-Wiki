@@ -164,6 +164,38 @@ npm run dev
 
 ![Frontend running in browser](Images/image21.png)
 
+## What's Next?
+
+## Quick Reference
+
+### Important Passwords
+
+- **PostgreSQL User**: `postgres`
+- **PostgreSQL Password**: [The one you set during installation]
+- **Database Name**: `belindas_closet`
+
+### Important URLs
+
+- **Backend API**: http://localhost:3000/api
+- **Frontend**: http://localhost:8082
+
+### Useful Commands
+
+# Connect to database via command line
+
+psql -h localhost -p 5432 -U postgres -d belindas_closet
+
+```
+
+## Getting Help
+
+If you encounter issues or want to learn more
+
+4. **PostgreSQL Documentation**: [https://www.postgresql.org/docs/](https://www.postgresql.org/docs/)
+5. **pgAdmin Documentation**: [https://www.pgadmin.org/docs/](https://www.pgadmin.org/docs/)
+
+---
+
 
 
 
