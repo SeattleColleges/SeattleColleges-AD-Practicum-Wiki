@@ -35,9 +35,11 @@ Use descriptive branch names that link to the issue you're working on:
 
 - `feature/issue-<number>-<short-description>` for new features
 - `fix/issue-<number>-<short-description>` for bug fixes
-- `docs/issue-<number>-<short-description>` for documentation changes
+- `documentation/issue-<number>-<short-description>` for documentation changes
 
 Example: `feature/issue-49-onboarding-guide`
+
+> **Note:** The prefix `documentation/` mirrors the `documentation` label used in the Issue Creation guide, so the terminology stays consistent across branches, labels, and PR conventions throughout the practicum repositories.
 
 ## Pull Request Workflow
 
@@ -74,6 +76,47 @@ If you get stuck:
 1. Check existing documentation in this Wiki first.
 2. Search closed issues and pull requests — your question may have been answered before.
 3. Ask in the practicum team channel or tag a maintainer in the relevant issue.
+
+## Setting Up Your Local Environment
+
+Before contributing, set up your development environment so you can clone repositories and push commits cleanly.
+
+### Required Tools
+
+- **Git** — version control system. Download from https://git-scm.com/downloads.
+- **A code editor** — Visual Studio Code is recommended (https://code.visualstudio.com/).
+- **GitHub account** — make sure you've accepted the invitation to the SeattleColleges organization.
+
+### Configure Git
+
+After installing Git, set your identity so commits are properly attributed:
+
+- Run `git config --global user.name "Your Name"`
+- Run `git config --global user.email "your-github-email@example.com"`
+
+Use the same email that's associated with your GitHub account so commits are linked to your profile.
+
+### Authentication: SSH or HTTPS
+
+GitHub supports two ways to authenticate when pushing code:
+
+- **SSH** — generate an SSH key locally and add the public key to your GitHub account. More secure and convenient for daily work.
+- **HTTPS with Personal Access Token (PAT)** — easier to set up initially, but the token must be regenerated periodically.
+
+GitHub's official setup guides:
+
+- SSH: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+- PAT: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+### Verify Your Setup
+
+Test that everything is working by running:
+
+- `git clone https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki.git`
+- `cd SeattleColleges-AD-Practicum-Wiki`
+- `git status`
+
+If `git status` runs without authentication errors, you're ready to start contributing.
 
 ## Common Git Commands Cheatsheet
 
