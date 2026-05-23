@@ -166,6 +166,62 @@ Each practicum contributor is expected to submit a weekly development update cov
 
 Submitting weekly updates consistently is mandatory and contributes to your practicum grade.
 
+## Frequently Asked Questions (FAQ)
+
+### How many hours per week should I expect to spend on practicum work?
+
+Approximately **3 hours per week** is the baseline expectation. This typically breaks down into about 1.5 hours on your assigned issue and 1–1.5 hours on PR reviews, weekly updates, and team communication.
+
+### Do I need to be assigned to an issue before working on it?
+
+Yes. Self-assign through GitHub if you have permission, or leave a comment asking a maintainer to assign you. This prevents duplicate work and keeps the issue tracker accurate.
+
+### What do I do if my PR gets merge conflicts?
+
+Pull the latest `main` into your branch (`git pull origin main`), resolve the conflicts in your editor, commit the resolution, and push again. If you're stuck, ask in the team channel — conflicts are common and the team can walk you through it.
+
+### How long should I wait for a review before nudging?
+
+A reasonable cadence is **2–3 business days**. After that, leave a polite comment on the PR tagging the reviewers, or ask in the team channel. Reviews are part of the weekly expectations, so reviewers should be responsive.
+
+### Can I work on issues in multiple repositories?
+
+Yes, as long as you stay within the SeattleColleges practicum organization. Just make sure your weekly update links the correct repository, issue, and PR.
+
+### What if I can't finish my issue in one week?
+
+That's normal. Open a **draft PR** with whatever progress you have, link it to the issue, and note the remaining work in your weekly update. Incremental progress over multiple weeks is expected for larger issues.
+
+## Common Git Troubleshooting
+
+### "Authentication failed" when pushing
+
+- Verify your remote URL: `git remote -v`. If it's HTTPS, regenerate your Personal Access Token. If it's SSH, confirm your SSH key is added to GitHub (`ssh -T git@github.com`).
+
+### "Permission denied (publickey)"
+
+- Your SSH key is missing or not added to your GitHub account. Follow GitHub's SSH setup guide and re-test the connection.
+
+### "Your branch is behind 'origin/main'"
+
+- Pull the latest changes: `git pull origin main`. If you have local commits, this may trigger a merge — that's expected.
+
+### "Merge conflict in <file>"
+
+- Open the conflicted file in your editor. You'll see markers like `<<<<<<<`, `=======`, and `>>>>>>>` showing the two versions. Edit to keep the correct content, remove the markers, then run `git add <file>` and `git commit` to finalize.
+
+### Accidentally committed to `main` locally
+
+- Create a new branch from your current state: `git checkout -b feature/your-branch`. Then reset `main` to match origin: `git checkout main && git reset --hard origin/main`. Your commits are preserved on the new branch.
+
+### Want to discard local changes to a file
+
+- Run `git restore <file>` to revert it to the last committed version. If the file is already staged, run `git restore --staged <file>` first.
+
+### Lost commits after a `reset --hard`
+
+- Run `git reflog` to see your recent HEAD history. Find the commit hash you want to restore, then run `git checkout <commit-hash>` or `git reset --hard <commit-hash>`.
+
 ## Related Resources
 
 - Issue Creation Guide
