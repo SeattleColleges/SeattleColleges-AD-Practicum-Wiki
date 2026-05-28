@@ -222,6 +222,39 @@ That's normal. Open a **draft PR** with whatever progress you have, link it to t
 
 - Run `git reflog` to see your recent HEAD history. Find the commit hash you want to restore, then run `git checkout <commit-hash>` or `git reset --hard <commit-hash>`.
 
+## Communication Channels and Team Etiquette
+
+Clear communication keeps the practicum running smoothly, especially since the team works asynchronously across different schedules.
+
+### Where to Communicate
+
+- **GitHub Issues** — for proposing, discussing, and tracking work. Use issue comments to ask scope questions before starting.
+- **Pull Request comments** — for code-specific discussion tied to a change. Keep technical back-and-forth here so it stays attached to the relevant diff.
+- **Team channel (Slack/Discord)** — for quick questions, coordination, and unblocking. Use threads to keep topics organized.
+
+### Asynchronous Communication Etiquette
+
+- **Default to writing things down.** A comment on the issue or PR is more useful than a verbal hallway conversation, because it's searchable and visible to the whole team.
+- **Provide context.** When asking for help, include what you tried, the exact error message, and a link to the relevant issue or PR. This reduces back-and-forth.
+- **Tag intentionally.** Use `@mentions` when you need a specific person's input, but avoid tagging everyone for routine updates.
+
+### Response Time Expectations
+
+- Aim to respond to review requests and direct questions within **2–3 business days**.
+- If you'll be unavailable for an extended period, leave a note on your active issues/PRs so others can plan around it.
+
+### Escalating a Blocker
+
+1. Re-check the documentation and existing issues/PRs first.
+2. Ask in the team channel with full context.
+3. If still blocked after a reasonable wait, tag the relevant maintainer directly on the issue or PR.
+
+### Giving and Receiving Feedback
+
+- Assume good intent — everyone is here to learn.
+- Frame feedback around the work, not the person.
+- When receiving feedback, acknowledge it even if you plan to address it later, so the reviewer knows it was seen.
+
 ## Related Resources
 
 - Issue Creation Guide
