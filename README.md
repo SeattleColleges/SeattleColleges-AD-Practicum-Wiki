@@ -1,9 +1,10 @@
 Seattle Colleges – Application Development Practicum Wiki
 
-Welcome to the official centralized knowledge base for the Seattle Colleges Application Development Practicum.
-This repository hosts the Practicum Wiki, which contains all documentation, onboarding materials, processes, team structures, and project information used throughout the program.
+Welcome to the Seattle Colleges Application Development Practicum. This repository holds version-controlled documentation for practicum contributors.
 
-This repo exists to replace scattered Notion pages and ensure that all students, PMs, and leads have a single source of truth for Practicum operations.
+## Start here
 
-👉 Click here to open the Wiki:
-[https://github.com/SeattleColleges/](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki)
+- [New contributor onboarding guide](Onboarding/Onboarding-Guide.md)
+- [Published Practicum Wiki](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki)
+
+Propose edits to the onboarding guide in a repository pull request. For changes to a published Wiki page, follow the team's separate Wiki editing workflow. Wiki updates are published independently of repository pull requests.
