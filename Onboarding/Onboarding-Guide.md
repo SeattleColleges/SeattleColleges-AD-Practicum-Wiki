@@ -32,13 +32,15 @@ The [published Practicum Wiki](https://github.com/SeattleColleges/SeattleCollege
 
 ## Branch Naming Convention
 
-Use the type categories in the Wiki's [Branch Creation](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Branch-Creation) guide. Keep your branch name short, lowercase, and dash-separated, using the form `<type>/<short-description>`.
+Use the type categories in the Wiki's [Branch Creation](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Branch-Creation) guide. Keep branch names short, lowercase, and dash-separated, using `<type>/<short-description>`. The examples below show where to enter each name for a documentation change.
 
-- `feature/add-login-form` for a new feature
-- `bug/fix-mobile-footer` for a bug fix
-- `documentation/update-onboarding-guide` for a documentation change
+| Where | Example |
+| --- | --- |
+| GitHub issue title | `documentation: Add setup steps to README` |
+| Git branch name | `documentation/add-readme-setup-steps` |
+| Git commit message | `docs: add setup steps to README` |
 
-Follow any additional naming rules in the repository where you are contributing.
+Use the [Issue Creation](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Issue-Creation) format for issue titles and the [Commit Messages](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Commit-Messages) guidance for commits. A bug-fix branch can be named `bug/fix-mobile-footer`. A feature branch can be named `feature/add-login-form`. Follow any additional naming rules in your team's repository.
 
 ## Pull Request Workflow
 
