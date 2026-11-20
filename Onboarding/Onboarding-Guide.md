@@ -110,13 +110,35 @@ GitHub's official setup guides:
 
 ### Verify Your Setup
 
-Test that everything is working by running:
+1. If you do not already have a checkout, clone the public repository:
 
-- `git clone https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki.git`
-- `cd SeattleColleges-AD-Practicum-Wiki`
-- `git status`
+   ```bash
+   git clone https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki.git
+   ```
 
-If `git status` runs without authentication errors, you're ready to start contributing.
+   A successful clone confirms that you can read the repository. Anyone can clone a public repository.
+
+2. Open the checkout directory and check your working tree and remote URLs. Run `cd` from the parent directory if you are not already inside the checkout.
+
+   ```bash
+   cd SeattleColleges-AD-Practicum-Wiki
+   git status
+   git remote -v
+   ```
+
+   `git status` reports local changes. `git remote -v` shows which URLs Git uses to fetch and push. Both commands run locally.
+
+3. Confirm your [repository role](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization) and the team's push remote before publishing a branch. If you need [GitHub repository access](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/New-Student-Onboarding#step-1-required-accounts), contact the practicum TPM or Security Administrator. If you already use GitHub CLI, you can check the signed-in account's role with:
+
+   ```bash
+   gh auth status --hostname github.com
+   gh repo view SeattleColleges/SeattleColleges-AD-Practicum-Wiki \
+     --json viewerPermission --jq .viewerPermission
+   ```
+
+   `WRITE`, `MAINTAIN`, and `ADMIN` grant repository-level push access. The role applies to the account shown by GitHub CLI. If Git uses a different account, confirm that account's role and follow any branch rules.
+
+4. Push your feature branch to the team's repository if you have access and the team uses that workflow. If the team allows [fork-based contributions](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo), push your feature branch to your fork and open a pull request against the team's repository.
 
 ## Common Git Commands Cheatsheet
 
