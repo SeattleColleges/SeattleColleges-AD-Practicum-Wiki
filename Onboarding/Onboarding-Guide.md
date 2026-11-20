@@ -45,7 +45,10 @@ Follow any additional naming rules in the repository where you are contributing.
 1. Create a branch from the base branch specified by the team, usually `main` or `develop`. For a follow-up that depends on an open PR, confirm the parent branch with the team and select it as the base.
 2. Push your branch and open a [draft pull request](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Draft-and-Regular-PRs) early. Check that GitHub shows the intended base and compare branches.
 3. Make small, focused commits with clear messages and push them to the same branch.
-4. In the PR description, reference related work. Use `Refs #49` for the recurring weekly tracker so it stays open.
+4. Reference the issue in the PR description.
+   - Use `Closes #123` when the PR completes issue #123 and targets the repository's default branch. GitHub closes the issue when the PR is merged.
+   - Use `Refs #123` for partial work or a stacked PR that targets another working branch. Use `Refs #49` for the recurring weekly tracker, even when a weekly contribution is complete.
+   - Refer to [GitHub's issue-linking documentation](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue) for the supported closing keywords and how the base branch affects them.
 5. Mark the PR as **Ready for review** when your changes and verification are ready. Address feedback and re-request review when ready.
 
 ## Commit Message Guidelines
