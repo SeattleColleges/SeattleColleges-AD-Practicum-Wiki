@@ -7,3 +7,10 @@ This repo exists to replace scattered Notion pages and ensure that all students,
 
 👉 Click here to open the Wiki:
 [https://github.com/SeattleColleges/](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki)
+
+## Start here
+
+- [New contributor onboarding guide](Onboarding/Onboarding-Guide.md)
+- [Published Practicum Wiki](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki)
+
+The onboarding guide is versioned in this repository. GitHub Wiki pages are published separately, so editing a repository Markdown file does not automatically change the Wiki.
