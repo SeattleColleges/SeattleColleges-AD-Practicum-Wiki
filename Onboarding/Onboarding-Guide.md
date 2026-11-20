@@ -116,7 +116,7 @@ Test that everything is working by running:
 - `cd SeattleColleges-AD-Practicum-Wiki`
 - `git status`
 
-If `git status` runs without authentication errors, you're ready to start contributing.
+`git status` confirms that you are in a local checkout. Cloning a public repository verifies read access, not permission to push. Follow the repository's contribution workflow: push to your feature branch if you have permission, or use an authorized fork if the project accepts fork-based contributions. Ask a maintainer if either step is unclear.
 
 ## Common Git Commands Cheatsheet
 
