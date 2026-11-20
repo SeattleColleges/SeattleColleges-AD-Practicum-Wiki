@@ -2,6 +2,14 @@
 
 Welcome to the Seattle Colleges Application Development Practicum! This guide is designed to help new contributors get up to speed quickly with the team's workflow, repository structure, and contribution expectations.
 
+## Quick Navigation
+
+- [Branch naming](#branch-naming-convention)
+- [Pull request workflow](#pull-request-workflow)
+- [Local setup](#setting-up-your-local-environment)
+- [Git troubleshooting](#common-git-troubleshooting)
+- [Team communication](#communication-channels-and-team-etiquette)
+
 ## Purpose
 
 This guide aims to:
