@@ -62,10 +62,20 @@ Example: `docs: add onboarding guide for new practicum contributors`
 
 ## Code Review Etiquette
 
-- Be respectful and constructive — focus on the code, not the person.
-- Use **Request changes** for blocking issues, **Comment** for suggestions, and **Approve** when satisfied.
-- Do not push commits directly to another contributor's branch — leave feedback so they can address it themselves.
-- Aim to review at least two open pull requests per week as part of practicum expectations.
+Review at least two peer pull requests each week. See the Wiki's [PR Review Process](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/PR-Review-Process) for the team workflow.
+
+1. Read the description and linked issue. In **Files changed**, compare the diff with the acceptance criteria and identify what you need to verify.
+2. Identify the PR head branch and latest commit in GitHub. For Markdown, open the rendered file on that branch and test the affected headings, links, and images. For local checks, use a clean checkout in the repository. With GitHub CLI, run the commands below and replace `123` with the PR number.
+
+   ```bash
+   git status --short
+   gh pr checkout 123 --detach
+   git rev-parse HEAD
+   ```
+
+   If `git status --short` lists changes, use a separate clean checkout before switching. Compare the printed commit with the PR's latest commit. If it differs, fetch the current PR and repeat the check.
+3. Record the PR link, commit, steps, expected result, and what you observed. Capture your own screenshot or recording when the assignment calls for it. Include any checks you could not run.
+4. Leave specific, constructive feedback in the PR. Use **Request changes** for blockers, **Comment** for suggestions, and **Approve** when the PR meets its acceptance criteria. Leave proposed edits as review suggestions so the author can apply them.
 
 ## Getting Help
 
