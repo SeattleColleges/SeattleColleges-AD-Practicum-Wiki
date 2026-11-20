@@ -39,7 +39,7 @@ Use descriptive branch names that link to the issue you're working on:
 
 Example: `feature/issue-49-onboarding-guide`
 
-> **Note:** The prefix `documentation/` mirrors the `documentation` label used in the Issue Creation guide, so the terminology stays consistent across branches, labels, and PR conventions throughout the practicum repositories.
+Keep branch names, issue titles, and commit messages distinct. A branch can use `documentation/issue-49-onboarding-guide`, an issue title should describe the work in plain English, and a Conventional Commit for documentation starts with `docs:`. Follow any repository-specific naming rule.
 
 ## Pull Request Workflow
 
