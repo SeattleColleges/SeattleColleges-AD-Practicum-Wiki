@@ -67,7 +67,7 @@ Example: `docs: add onboarding guide for new practicum contributors`
 - Be respectful and constructive — focus on the code, not the person.
 - Use **Request changes** for blocking issues, **Comment** for suggestions, and **Approve** when satisfied.
 - Do not push commits directly to another contributor's branch — leave feedback so they can address it themselves.
-- Aim to review at least two open pull requests per week as part of practicum expectations.
+- Review at least two pull requests per week according to the course instructions. Compare the change against the linked issue, verify the behavior on the PR branch, and record your observations. For documentation, render the changed page and check affected links and navigation. Attach your own screenshots and recordings when required; note anything you could not verify.
 
 ## Getting Help
 
