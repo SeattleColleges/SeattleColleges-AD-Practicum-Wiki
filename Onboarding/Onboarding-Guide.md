@@ -46,7 +46,7 @@ Example: `feature/issue-49-onboarding-guide`
 1. Create a branch from `main` linked to your issue.
 2. Make small, focused commits with clear messages.
 3. Open a **draft pull request** early to share progress with the team.
-4. Reference the related issue in the PR description using `Closes #<issue-number>`.
+4. Use `Closes #<issue-number>` if merging completes that issue. For an ongoing tracker or partial contribution, use `Refs #<issue-number>` so the issue stays open.
 5. Mark the PR as **Ready for review** once your work is complete.
 6. Address review feedback promptly and re-request review when ready.
 
