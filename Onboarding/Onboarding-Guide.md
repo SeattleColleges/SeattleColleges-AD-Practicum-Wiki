@@ -12,12 +12,13 @@ This guide aims to:
 
 ## Repository Structure
 
-The Practicum Wiki repository is organized into the following key areas:
+This repository contains version-controlled Markdown and other project files.
 
-- **`belindas-closet/`** — Documentation related to the Belinda's Closet project.
-- **`nsc-events/`** — Documentation for the NSC Events project.
-- **`Issue-Creation/`** — Guidelines for creating well-formed issues.
-- **`Onboarding/`** — This guide and related onboarding materials.
+- [`belindas-closet/`](../belindas-closet/) contains documentation for Belinda's Closet.
+- [`nsc-events/`](../nsc-events/) contains documentation for NSC Events.
+- [`Onboarding/`](./) contains this guide.
+
+The [published Practicum Wiki](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki) contains program-wide guidance, including [Issue Creation](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Issue-Creation).
 
 ## Picking Up an Issue
 
@@ -31,24 +32,21 @@ The Practicum Wiki repository is organized into the following key areas:
 
 ## Branch Naming Convention
 
-Use descriptive branch names that link to the issue you're working on:
+Use the type categories in the Wiki's [Branch Creation](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Branch-Creation) guide. Keep your branch name short, lowercase, and dash-separated, using the form `<type>/<short-description>`.
 
-- `feature/issue-<number>-<short-description>` for new features
-- `fix/issue-<number>-<short-description>` for bug fixes
-- `documentation/issue-<number>-<short-description>` for documentation changes
+- `feature/add-login-form` for a new feature
+- `bug/fix-mobile-footer` for a bug fix
+- `documentation/update-onboarding-guide` for a documentation change
 
-Example: `feature/issue-49-onboarding-guide`
-
-> **Note:** The prefix `documentation/` mirrors the `documentation` label used in the Issue Creation guide, so the terminology stays consistent across branches, labels, and PR conventions throughout the practicum repositories.
+Follow any additional naming rules in the repository where you are contributing.
 
 ## Pull Request Workflow
 
-1. Create a branch from `main` linked to your issue.
-2. Make small, focused commits with clear messages.
-3. Open a **draft pull request** early to share progress with the team.
-4. Reference the related issue in the PR description using `Closes #<issue-number>`.
-5. Mark the PR as **Ready for review** once your work is complete.
-6. Address review feedback promptly and re-request review when ready.
+1. Create a branch from the base branch specified by the team, usually `main` or `develop`. For a follow-up that depends on an open PR, confirm the parent branch with the team and select it as the base.
+2. Push your branch and open a [draft pull request](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Draft-and-Regular-PRs) early. Check that GitHub shows the intended base and compare branches.
+3. Make small, focused commits with clear messages and push them to the same branch.
+4. In the PR description, reference related work. Use `Refs #49` for the recurring weekly tracker so it stays open.
+5. Mark the PR as **Ready for review** when your changes and verification are ready. Address feedback and re-request review when ready.
 
 ## Commit Message Guidelines
 
@@ -73,7 +71,7 @@ Example: `docs: add onboarding guide for new practicum contributors`
 
 If you get stuck:
 
-1. Check existing documentation in this Wiki first.
+1. Check the [published Practicum Wiki](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki) first.
 2. Search closed issues and pull requests — your question may have been answered before.
 3. Ask in the practicum team channel or tag a maintainer in the relevant issue.
 
@@ -134,7 +132,7 @@ A quick reference for the Git commands most commonly used during practicum work:
 - `git checkout -b <branch-name>` — create and switch to a new branch.
 - `git checkout <branch-name>` — switch to an existing branch.
 - `git fetch origin` — download latest refs from the remote without merging.
-- `git pull origin main` — pull the latest changes from `main` into your current branch.
+- `git pull origin main` — update your current branch from `main` when that is your PR base. Substitute your PR's base branch when it differs.
 
 ### Staging and Committing
 
@@ -178,7 +176,7 @@ Yes. Self-assign through GitHub if you have permission, or leave a comment askin
 
 ### What do I do if my PR gets merge conflicts?
 
-Pull the latest `main` into your branch (`git pull origin main`), resolve the conflicts in your editor, commit the resolution, and push again. If you're stuck, ask in the team channel — conflicts are common and the team can walk you through it.
+Update from the base shown on your pull request. For a PR targeting `main`, run `git pull origin main` from your own branch. Resolve the conflicts in your editor, commit the resolution, and push your branch. Ask in the team channel if you need help.
 
 ### How long should I wait for a review before nudging?
 
@@ -202,9 +200,9 @@ That's normal. Open a **draft PR** with whatever progress you have, link it to t
 
 - Your SSH key is missing or not added to your GitHub account. Follow GitHub's SSH setup guide and re-test the connection.
 
-### "Your branch is behind 'origin/main'"
+### Your branch is behind its PR base
 
-- Pull the latest changes: `git pull origin main`. If you have local commits, this may trigger a merge — that's expected.
+- Pull the latest changes from the base listed on the PR. For a PR targeting `main`, run `git pull origin main` from your own branch. This may create a merge commit if the branches have diverged.
 
 ### "Merge conflict in <file>"
 
@@ -257,9 +255,9 @@ Clear communication keeps the practicum running smoothly, especially since the t
 
 ## Related Resources
 
-- Issue Creation Guide
-- Practicum repository README
-- Conventional Commits specification: https://www.conventionalcommits.org/
+- [Issue Creation guide](https://github.com/SeattleColleges/SeattleColleges-AD-Practicum-Wiki/wiki/Issue-Creation)
+- [Practicum repository README](../README.md)
+- [Conventional Commits specification](https://www.conventionalcommits.org/)
 
 ---
 
