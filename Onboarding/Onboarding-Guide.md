@@ -221,9 +221,17 @@ git status --short
 git diff -- notes.md
 ```
 
-`git restore --staged` sets the file's index entry to match `HEAD` and leaves its on-disk contents intact. If you staged a new file, it becomes untracked and still appears in `git status --short`.
+Suppose you committed `Monday` in `notes.md`, changed the line to `Tuesday` and staged it, then typed `Friday` without staging again. Each command below starts from the same first row. Choose the row that gives the result you want.
 
-To intentionally discard **unstaged edits to a tracked file**, review `git diff -- notes.md` first. Running `git restore -- notes.md` overwrites the working copy with the version in the index. Any staged changes remain staged. See the [Git restore documentation](https://git-scm.com/docs/git-restore).
+| Operation on `notes.md` | `HEAD` (current commit) | Index (staged for the next commit) | Working tree (file on disk) |
+| --- | --- | --- | --- |
+| Before either command | Monday | Tuesday | Friday |
+| After `git restore --staged -- notes.md` | Monday | Monday | Friday |
+| After `git restore -- notes.md` | Monday | Tuesday | Tuesday |
+
+Unstaging copies the entry from `HEAD` into the index and keeps your working copy. It creates no separate backup of the staged `Tuesday` version. If you unstage a newly added file, it becomes untracked and stays on disk.
+
+To intentionally discard unstaged edits, inspect `git diff -- notes.md` first. The plain restore copies the index into the working tree, overwriting `Friday` with `Tuesday`. See the [Git restore documentation](https://git-scm.com/docs/git-restore).
 
 ### Accidentally committed to `main` locally
 
@@ -237,7 +245,7 @@ git log -1 --oneline feature/recover-local-main
 git status --short
 ```
 
-The new branch points to the commits on `main`. Creating it leaves your current branch, local `main`, and the working copy in place. Staged, unstaged, and untracked changes stay in your local checkout. Creating a branch alone does not save those changes. See the [Git branch documentation](https://git-scm.com/docs/git-branch).
+The new branch preserves the commits reachable from its tip. Staged, unstaged, and untracked work stays in the current checkout. Creating the branch makes no independent backup of that work. See the [Git branch documentation](https://git-scm.com/docs/git-branch).
 
 ### Recover a commit using the reflog
 
@@ -292,4 +300,4 @@ Clear communication keeps the practicum running smoothly, especially since the t
 
 ---
 
-_Last updated: May 2026_
+_Last updated: November 2026_
