@@ -147,8 +147,8 @@ A quick reference for the Git commands most commonly used during practicum work:
 
 - `git log --oneline` — see a compact commit history.
 - `git diff` — see unstaged changes.
-- `git restore <file>` — discard local changes to a file.
-- `git reset HEAD <file>` — unstage a file without losing changes.
+- `git diff --staged` — see staged changes.
+- `git restore --staged -- <file>` — unstage a file and keep its working copy. See [Unstage changes to a file](#unstage-changes-to-a-file) before discarding edits.
 
 ## Weekly Development Update Expectations
 
@@ -208,17 +208,56 @@ That's normal. Open a **draft PR** with whatever progress you have, link it to t
 
 - Open the conflicted file in your editor. You'll see markers like `<<<<<<<`, `=======`, and `>>>>>>>` showing the two versions. Edit to keep the correct content, remove the markers, then run `git add <file>` and `git commit` to finalize.
 
+### Unstage changes to a file
+
+From the repository root, replace `notes.md` with the path you want to unstage. Check the staged and unstaged versions before making the change.
+
+```bash
+git status --short
+git diff --staged -- notes.md
+git diff -- notes.md
+git restore --staged -- notes.md
+git status --short
+git diff -- notes.md
+```
+
+Suppose you committed `Monday` in `notes.md`, changed the line to `Tuesday` and staged it, then typed `Friday` without staging again. Each command below starts from the same first row. Choose the row that gives the result you want.
+
+| Operation on `notes.md` | `HEAD` (current commit) | Index (staged for the next commit) | Working tree (file on disk) |
+| --- | --- | --- | --- |
+| Before either command | Monday | Tuesday | Friday |
+| After `git restore --staged -- notes.md` | Monday | Monday | Friday |
+| After `git restore -- notes.md` | Monday | Tuesday | Tuesday |
+
+Unstaging copies the entry from `HEAD` into the index and keeps your working copy. It creates no separate backup of the staged `Tuesday` version. If you unstage a newly added file, it becomes untracked and stays on disk.
+
+To intentionally discard unstaged edits, inspect `git diff -- notes.md` first. The plain restore copies the index into the working tree, overwriting `Friday` with `Tuesday`. See the [Git restore documentation](https://git-scm.com/docs/git-restore).
+
 ### Accidentally committed to `main` locally
 
-- Create a new branch from your current state: `git checkout -b feature/your-branch`. Then reset `main` to match origin: `git checkout main && git reset --hard origin/main`. Your commits are preserved on the new branch.
+Check the tip of local `main` and give those commits a new branch name. Verify that both log commands show the same commit ID.
 
-### Want to discard local changes to a file
+```bash
+git status --short
+git log -1 --oneline main
+git branch feature/recover-local-main main
+git log -1 --oneline feature/recover-local-main
+git status --short
+```
 
-- Run `git restore <file>` to revert it to the last committed version. If the file is already staged, run `git restore --staged <file>` first.
+The new branch preserves the commits reachable from its tip. Staged, unstaged, and untracked work stays in the current checkout. Creating the branch makes no independent backup of that work. See the [Git branch documentation](https://git-scm.com/docs/git-branch).
 
-### Lost commits after a `reset --hard`
+### Recover a commit using the reflog
 
-- Run `git reflog` to see your recent HEAD history. Find the commit hash you want to restore, then run `git checkout <commit-hash>` or `git reset --hard <commit-hash>`.
+Run `git reflog --no-abbrev` in the same local checkout to find the full ID of a recent commit. Replace `<commit-hash>` below with that ID and run `git show` to check the commit message and patch. Once you confirm it contains the change you want, create a branch at that commit and verify the branch tip.
+
+```bash
+git show <commit-hash>
+git branch feature/recover-commit <commit-hash>
+git log -1 --oneline feature/recover-commit
+```
+
+The reflog records local reference updates, and its entries can expire. It does not record file edits that were never committed. Creating the recovery branch leaves the current checkout in place. See the [Git reflog documentation](https://git-scm.com/docs/git-reflog).
 
 ## Communication Channels and Team Etiquette
 
@@ -261,4 +300,4 @@ Clear communication keeps the practicum running smoothly, especially since the t
 
 ---
 
-_Last updated: May 2026_
+_Last updated: November 2026_
